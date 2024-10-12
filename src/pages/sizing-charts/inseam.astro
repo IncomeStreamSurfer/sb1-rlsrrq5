@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import InseamLengthChart from '../../components/InseamLengthChart.astro';
+
+const crumbs = [
+  { text: "Sizing Charts", href: "/sizing-charts" },
+  { text: "Inseam Length Conversion Chart", href: "/sizing-charts/inseam" }
+];
+---
+
+<Layout title="Men's Inseam Length Conversion Chart | Classic Menswear Chronicle" crumbs={crumbs}>
+  <h1 class="text-4xl font-bold mb-4">Men's Inseam Length Conversion Chart</h1>
+  <p class="mb-8">Find the perfect length for your pants and trousers with our inseam length conversion chart. This guide helps you understand inseam measurements for different heights, ensuring a proper fit and stylish appearance.</p>
+  
+  <InseamLengthChart />
+  
+  <div class="mt-8">
+    <h2 class="text-2xl font-bold mb-4">How to Measure Your Inseam</h2>
+    <ol class="list-decimal list-inside space-y-2">
+      <li>Wear a pair of well-fitting pants.</li>
+      <li>Measure from the crotch seam to the bottom of the ankle.</li>
+      <li>For the most accurate measurement, have someone else measure for you while you stand straight.</li>
+      <li>Record the measurement and use the chart above to find your inseam length.</li>
+    </ol>
+  </div>
+  
+  <p class="mt-8 text-gray-600">Tip: Consider the type of shoes you'll be wearing with the pants when determining the ideal inseam length.</p>
+</Layout>

@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import WaistSizeChart from '../../components/WaistSizeChart.astro';
+
+const crumbs = [
+  { text: "Sizing Charts", href: "/sizing-charts" },
+  { text: "Waist Size Conversion Chart", href: "/sizing-charts/waist" }
+];
+---
+
+<Layout title="Men's Waist Size Conversion Chart | Classic Menswear Chronicle" crumbs={crumbs}>
+  <h1 class="text-4xl font-bold mb-4">Men's Waist Size Conversion Chart</h1>
+  <p class="mb-8">Find the perfect fit for your pants and trousers with our waist size conversion chart. This guide helps you convert between inches and centimeters, ensuring a comfortable and stylish fit for any bottom wear.</p>
+  
+  <WaistSizeChart />
+  
+  <div class="mt-8">
+    <h2 class="text-2xl font-bold mb-4">How to Measure Your Waist Size</h2>
+    <ol class="list-decimal list-inside space-y-2">
+      <li>Use a flexible tape measure.</li>
+      <li>Wrap the tape measure around your natural waistline, typically located above your belly button and below your rib cage.</li>
+      <li>Keep the tape measure snug but not tight, and make sure it's level all the way around.</li>
+      <li>Record the measurement and use the chart above to find your waist size.</li>
+    </ol>
+  </div>
+  
+  <p class="mt-8 text-gray-600">Note: Your waist size may differ from your pant size, which often includes extra room for comfort.</p>
+</Layout>

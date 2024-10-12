@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GloveSizeChart from '../../components/GloveSizeChart.astro';
+
+const crumbs = [
+  { text: "Sizing Charts", href: "/sizing-charts" },
+  { text: "Glove Size Conversion Chart", href: "/sizing-charts/glove" }
+];
+---
+
+<Layout title="Men's Glove Size Conversion Chart | Classic Menswear Chronicle" crumbs={crumbs}>
+  <h1 class="text-4xl font-bold mb-4">Men's Glove Size Conversion Chart</h1>
+  <p class="mb-8">Find the perfect fit for your hands with our glove size conversion chart. This guide helps you convert between S-XXL sizes and numerical measurements, ensuring a comfortable and stylish fit for any occasion.</p>
+  
+  <GloveSizeChart />
+  
+  <div class="mt-8">
+    <h2 class="text-2xl font-bold mb-4">How to Measure Your Hand for Gloves</h2>
+    <ol class="list-decimal list-inside space-y-2">
+      <li>Measure around your dominant hand at the widest part (usually just below the knuckles, excluding the thumb).</li>
+      <li>Make sure the tape measure is snug but not tight.</li>
+      <li>Record the measurement in inches or centimeters.</li>
+      <li>Use the chart above to find your corresponding glove size.</li>
+    </ol>
+  </div>
+  
+  <p class="mt-8 text-gray-600">Tip: If you're between sizes, it's usually best to choose the larger size for a more comfortable fit.</p>
+</Layout>

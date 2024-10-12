@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const crumbs = [
+  { text: "Glossary", href: "/glossary" },
+  { text: "Bespoke", href: "/glossary/bespoke" }
+];
+
+const term = {
+  term: "Bespoke",
+  description: "Custom-made clothing, typically of high quality and made to the client's exact specifications.",
+  detailedExplanation: "Bespoke tailoring is the pinnacle of men's fashion, offering a completely personalized garment crafted from scratch to fit the individual perfectly. The term 'bespoke' originates from the verb 'to bespeak,' meaning to order or commission an item. In the context of menswear, it refers to clothing that is 'spoken for' by a specific client.",
+  usageInMenswear: "Bespoke tailoring is most commonly associated with suits, but can apply to any garment, including shirts, trousers, and even shoes. The process typically involves multiple fittings, where the tailor takes extensive measurements and adjusts the garment throughout its creation. This results in a perfect fit that takes into account the client's unique body shape, posture, and preferences.",
+  careAndMaintenance: "Bespoke garments, due to their high quality and perfect fit, often require special care:\n\n1. Dry clean sparingly, only when necessary\n2. Use wide, shaped hangers to maintain the garment's shape\n3. Rotate suits and other bespoke items to prevent wear\n4. Brush after each wear to remove dirt and debris\n5. Store in a cool, dry place in breathable garment bags",
+  relatedTerms: [
+    { term: "Made-to-Measure", description: "A step between off-the-rack and bespoke, where a standard pattern is adjusted to the client's measurements." },
+    { term: "Tailoring", description: "The art of fitting and adjusting garments to a person's body." },
+    { term: "Pattern Making", description: "The process of creating a template for cutting fabric pieces that will be sewn together to create a garment." }
+  ]
+};
+---
+
+<Layout title={`${term.term} - Menswear Glossary | Classic Menswear Chronicle`} crumbs={crumbs}>
+  <h1 class="text-4xl font-bold mb-4">{term.term}</h1>
+  <p class="text-xl mb-8">{term.description}</p>
+
+  <div class="prose lg:prose-xl">
+    <h2>Detailed Explanation</h2>
+    <p>{term.detailedExplanation}</p>
+
+    <h2>How It's Used in Menswear</h2>
+    <p>{term.usageInMenswear}</p>
+
+    <h2>Care and Maintenance</h2>
+    <p>{term.careAndMaintenance}</p>
+
+    <h2>Related Terms</h2>
+    <ul>
+      {term.relatedTerms.map((relatedTerm) => (
+        <li>
+          <strong>{relatedTerm.term}:</strong> {relatedTerm.description}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="mt-8">
+    <a href="/glossary" class="text-blue-600 hover:underline">← Back to Glossary</a>
+  </div>
+</Layout>

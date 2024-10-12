@@ -1,0 +1,31 @@
+---
+const chestSizes = [
+  { size: "XS", inches: "32-34", cm: "81-86" },
+  { size: "S", inches: "35-37", cm: "89-94" },
+  { size: "M", inches: "38-40", cm: "97-102" },
+  { size: "L", inches: "41-43", cm: "104-109" },
+  { size: "XL", inches: "44-46", cm: "112-117" },
+  { size: "XXL", inches: "47-49", cm: "119-124" },
+];
+---
+
+<div class="bg-gray-100 p-6 rounded-lg shadow-md">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-300 p-2 text-sm font-bold">Size</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Inches</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Centimeters</th>
+      </tr>
+    </thead>
+    <tbody>
+      {chestSizes.map(({ size, inches, cm }) => (
+        <tr class="hover:bg-gray-50">
+          <td class="border border-gray-300 p-2 text-sm text-center">{size}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{inches}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{cm}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

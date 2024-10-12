@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SizeConversionChart from '../../components/SizeConversionChart.astro';
+
+const crumbs = [
+  { text: "Sizing Charts", href: "/sizing-charts" },
+  { text: "Suit Size Conversion Chart", href: "/sizing-charts/suit" }
+];
+---
+
+<Layout title="Suit Size Conversion Chart: US, UK, EU Sizes | Classic Menswear Chronicle" crumbs={crumbs}>
+  <h1 class="text-4xl font-bold mb-4">Suit Size Conversion Chart: US, UK, and EU Sizes</h1>
+  <p class="mb-8">Use our comprehensive suit size conversion chart to find your perfect fit across US, UK, and European sizing systems. Whether you're shopping for a classic Italian suit or a British tailored jacket, this guide will help you navigate international suit sizes with ease.</p>
+  
+  <SizeConversionChart />
+  
+  <div class="mt-8">
+    <h2 class="text-2xl font-bold mb-4">How to Measure for a Suit</h2>
+    <ol class="list-decimal list-inside space-y-2">
+      <li>Chest: Measure around the fullest part of your chest, keeping the tape measure horizontal.</li>
+      <li>Waist: Measure around your natural waistline, typically just above your belly button.</li>
+      <li>Sleeve: Measure from the shoulder seam to just past your wrist bone.</li>
+      <li>Inseam: Measure from the crotch to the bottom of your ankle.</li>
+    </ol>
+  </div>
+  
+  <p class="mt-8 text-gray-600">Note: These measurements are general guidelines. For the best fit, we recommend getting measured by a professional tailor.</p>
+</Layout>

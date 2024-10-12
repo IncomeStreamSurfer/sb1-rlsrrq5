@@ -1,0 +1,32 @@
+---
+const hatSizes = [
+  { inches: "21 1/8", cm: "53.7", size: "6 3/4" },
+  { inches: "21 1/2", cm: "54.6", size: "6 7/8" },
+  { inches: "21 7/8", cm: "55.6", size: "7" },
+  { inches: "22 1/4", cm: "56.5", size: "7 1/8" },
+  { inches: "22 5/8", cm: "57.5", size: "7 1/4" },
+  { inches: "23", cm: "58.4", size: "7 3/8" },
+  { inches: "23 1/2", cm: "59.7", size: "7 1/2" },
+];
+---
+
+<div class="bg-gray-100 p-6 rounded-lg shadow-md">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-300 p-2 text-sm font-bold">Inches</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Centimeters</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Hat Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      {hatSizes.map(({ inches, cm, size }) => (
+        <tr class="hover:bg-gray-50">
+          <td class="border border-gray-300 p-2 text-sm text-center">{inches}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{cm}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{size}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

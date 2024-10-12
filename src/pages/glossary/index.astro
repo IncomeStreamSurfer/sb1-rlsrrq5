@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+const crumbs = [
+  { text: "Glossary", href: "/glossary" }
+];
+
+const glossaryTerms = [
+  { term: "Ascot", letter: "A", description: "A wide necktie worn with the ends folded over and fastened with a pin." },
+  { term: "Bespoke", letter: "B", description: "Custom-made clothing, typically of high quality and made to the client's exact specifications." },
+  { term: "Cufflinks", letter: "C", description: "Decorative fasteners used to secure the cuffs of dress shirts." },
+  { term: "Drape", letter: "D", description: "The way fabric hangs or falls on the body." },
+  { term: "Epaulette", letter: "E", description: "An ornamental shoulder piece on a coat or jacket, often used in military uniforms." },
+  { term: "Foulard", letter: "F", description: "A lightweight fabric, usually silk or silk-like material, with a small printed pattern." },
+  { term: "Gusset", letter: "G", description: "An extra piece of fabric sewn into a garment to give it more shape or strength." },
+  { term: "Herringbone", letter: "H", description: "A pattern of parallel lines that reverse direction, creating a V-shaped or zigzag effect." },
+  { term: "Inseam", letter: "I", description: "The inner seam of trousers, running from the crotch to the hem." },
+  { term: "Jacquard", letter: "J", description: "A fabric with an intricately woven pattern created on a special loom." },
+  { term: "Kipper Tie", letter: "K", description: "An exceptionally wide necktie, popular in the 1960s and 1970s." },
+  { term: "Lapel", letter: "L", description: "The folded flaps of cloth on the front of a jacket or coat." },
+  { term: "Merino", letter: "M", description: "A fine, soft wool from Merino sheep, known for its warmth and comfort." },
+  { term: "Nap", letter: "N", description: "The raised fuzzy surface on certain fabrics, such as flannel or velvet." },
+  { term: "Oxford Cloth", letter: "O", description: "A type of woven fabric commonly used in dress shirts, characterized by a basket-weave pattern." },
+  { term: "Pique", letter: "P", description: "A fabric woven with raised parallel cords, often used in polo shirts and formal wear." },
+  { term: "Quiff", letter: "Q", description: "A hairstyle that combines the 1950s pompadour with a modern approach, characterized by volume at the front." },
+  { term: "Raglan Sleeve", letter: "R", description: "A type of sleeve that extends in one piece to the collar, leaving a diagonal seam from underarm to collarbone." },
+  { term: "Selvedge", letter: "S", description: "The self-finished edge of fabric, often visible on high-quality denim jeans." },
+  { term: "Tuxedo", letter: "T", description: "A formal evening suit for men, typically with satin facings on the lapels." },
+  { term: "Undercollar", letter: "U", description: "The part of a jacket collar that sits against the neck, often made of a different fabric than the outer collar." },
+  { term: "Vamp", letter: "V", description: "The front part of a shoe's upper that covers the toes and instep." },
+  { term: "Welt", letter: "W", description: "A strip of leather that runs around the perimeter of a shoe, connecting the upper to the sole." },
+  { term: "Xtra Fine", letter: "X", description: "A term used to describe extremely high-quality wool or other fabrics." },
+  { term: "Yoke", letter: "Y", description: "A shaped pattern piece fitted across the shoulders of a shirt or bodice." },
+  { term: "Zoot Suit", letter: "Z", description: "A style of suit with high-waisted, wide-legged trousers and a long coat with wide lapels and padded shoulders." }
+];
+---
+
+<Layout title="Menswear Glossary | Classic Menswear Chronicle" crumbs={crumbs}>
+  <h1 class="text-4xl font-bold mb-8">Menswear Glossary</h1>
+  
+  <div class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Jump to Letter:</h2>
+    <div class="flex flex-wrap gap-2">
+      {alphabet.map((letter) => (
+        <a href={`#${letter}`} class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">{letter}</a>
+      ))}
+    </div>
+  </div>
+
+  {alphabet.map((letter) => {
+    const termsForLetter = glossaryTerms.filter(term => term.letter === letter);
+    return termsForLetter.length > 0 && (
+      <div id={letter} class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">{letter}</h2>
+        <ul class="space-y-4">
+          {termsForLetter.map((term) => (
+            <li>
+              <a href={`/glossary/${term.term.toLowerCase().replace(/\s+/g, '-')}`} class="text-xl font-semibold text-blue-600 hover:underline">{term.term}</a>
+              <p class="text-gray-600">{term.description}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  })}
+</Layout>

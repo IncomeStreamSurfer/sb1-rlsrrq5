@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ShirtSizeChart from '../../components/ShirtSizeChart.astro';
+
+---
+
+<Layout title="Men's Shirt Size Chart: Neck, Chest, Sleeve Measurements | Classic Menswear Chronicle">
+  <h1 class="text-4xl font-bold mb-4">Men's Shirt Size Chart: Neck, Chest, and Sleeve Measurements</h1>
+  <p class="mb-8">Find your perfect shirt fit with our detailed size chart. This guide includes neck, chest, and sleeve measurements to help you choose the right shirt size, whether you're shopping for dress shirts or casual button-downs.</p>
+  
+  <ShirtSizeChart />
+  
+  <div class="mt-8">
+    <h2 class="text-2xl font-bold mb-4">How to Measure for a Shirt</h2>
+    <ol class="list-decimal list-inside space-y-2">
+      <li>Neck: Measure around the base of your neck where a collar would sit.</li>
+      <li>Chest: Measure around the fullest part of your chest, keeping the tape horizontal.</li>
+      <li>Sleeve: Measure from the center back of your neck, over your shoulder, and down to your wrist.</li>
+    </ol>
+  </div>
+  
+  <p class="mt-8 text-gray-600">Tip: When in doubt, choose a slightly larger size for comfort, especially if you're between sizes.</p>
+</Layout>

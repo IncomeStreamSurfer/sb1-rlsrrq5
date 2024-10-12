@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import NeckSizeChart from '../../components/NeckSizeChart.astro';
+
+const crumbs = [
+  { text: "Sizing Charts", href: "/sizing-charts" },
+  { text: "Neck Size Conversion Chart", href: "/sizing-charts/neck" }
+];
+---
+
+<Layout title="Men's Neck Size Conversion Chart | Classic Menswear Chronicle" crumbs={crumbs}>
+  <h1 class="text-4xl font-bold mb-4">Men's Neck Size Conversion Chart</h1>
+  <p class="mb-8">Find the perfect fit for your dress shirts with our neck size conversion chart. This guide helps you convert between inches and centimeters, ensuring a comfortable and stylish fit for any collar.</p>
+  
+  <NeckSizeChart />
+  
+  <div class="mt-8">
+    <h2 class="text-2xl font-bold mb-4">How to Measure Your Neck Size</h2>
+    <ol class="list-decimal list-inside space-y-2">
+      <li>Use a flexible tape measure.</li>
+      <li>Wrap the tape measure around your neck, just below your Adam's apple.</li>
+      <li>Allow for a comfortable fit by inserting one finger between your neck and the tape measure.</li>
+      <li>Record the measurement and use the chart above to find your neck size.</li>
+    </ol>
+  </div>
+  
+  <p class="mt-8 text-gray-600">Tip: When buying dress shirts, choose a collar size that's 0.5 inches larger than your actual neck measurement for comfort.</p>
+</Layout>

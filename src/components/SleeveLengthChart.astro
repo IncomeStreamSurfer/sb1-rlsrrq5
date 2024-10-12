@@ -1,0 +1,31 @@
+---
+const sleeveLengths = [
+  { size: "XS", inches: "31-32", cm: "79-81" },
+  { size: "S", inches: "32-33", cm: "81-84" },
+  { size: "M", inches: "33-34", cm: "84-86" },
+  { size: "L", inches: "34-35", cm: "86-89" },
+  { size: "XL", inches: "35-36", cm: "89-91" },
+  { size: "XXL", inches: "36-37", cm: "91-94" },
+];
+---
+
+<div class="bg-gray-100 p-6 rounded-lg shadow-md">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-300 p-2 text-sm font-bold">Size</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Inches</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Centimeters</th>
+      </tr>
+    </thead>
+    <tbody>
+      {sleeveLengths.map(({ size, inches, cm }) => (
+        <tr class="hover:bg-gray-50">
+          <td class="border border-gray-300 p-2 text-sm text-center">{size}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{inches}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{cm}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

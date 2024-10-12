@@ -1,0 +1,32 @@
+---
+const sizeConversions = [
+  { us: 34, eu: 44 },
+  { us: 36, eu: 46 },
+  { us: 38, eu: 48 },
+  { us: 40, eu: 50 },
+  { us: 42, eu: 52 },
+  { us: 44, eu: 54 },
+  { us: 46, eu: 56 },
+  { us: 48, eu: 58 },
+  { us: 50, eu: 60 },
+];
+---
+
+<div class="size-conversion-chart bg-gray-100 p-6 rounded-lg shadow-md">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-300 p-2 text-sm font-bold">US Size</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">EU/IT Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      {sizeConversions.map(({ us, eu }) => (
+        <tr class="hover:bg-gray-50">
+          <td class="border border-gray-300 p-2 text-sm text-center">{us}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{eu}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

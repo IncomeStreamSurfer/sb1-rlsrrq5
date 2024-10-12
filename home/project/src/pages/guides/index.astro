@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const crumbs = [
+  { text: "Style Guides", href: "/guides" }
+];
+
+const styleGuides = [
+  { title: "Suit Essentials", url: "/guides/suit-essentials", description: "Master the art of wearing and choosing the perfect suit" },
+  { title: "Fabric Fundamentals", url: "/guides/fabric-fundamentals", description: "Understanding the materials that make exceptional menswear" },
+  { title: "Accessorizing 101", url: "/guides/accessorizing-101", description: "The finer points of completing your look with style" },
+  { title: "Suit Styles", url: "/guides/suit-styles", description: "Explore different suit styles and when to wear them" },
+  { title: "Dress Shirt Guide", url: "/guides/dress-shirt-guide", description: "Everything you need to know about dress shirts" },
+  { title: "Necktie Mastery", url: "/guides/necktie-mastery", description: "Perfect your tie game with our comprehensive guide" },
+  { title: "Shoe Essentials", url: "/guides/shoe-essentials", description: "Step up your footwear knowledge" },
+  { title: "Color Theory in Menswear", url: "/guides/color-theory-menswear", description: "Learn how to use color effectively in your outfits" },
+  { title: "Grooming Essentials", url: "/guides/grooming-essentials", description: "Maintain your appearance with our grooming tips" },
+  { title: "Wardrobe Organization", url: "/guides/wardrobe-organization", description: "Keep your closet in top shape" },
+  { title: "Business Casual Mastery", url: "/guides/business-casual-mastery", description: "Navigate the tricky world of business casual" },
+  { title: "Formal Wear Etiquette", url: "/guides/formal-wear-etiquette", description: "Master the rules of formal dressing" },
+];
+---
+
+<Layout title="Style Guides - Classic Menswear Chronicle" crumbs={crumbs}>
+  <h1 class="text-4xl font-bold mb-6">Classic Menswear Style Guides</h1>
+  <p class="text-xl mb-8">Explore our comprehensive collection of style guides to master every aspect of classic menswear.</p>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {styleGuides.map((guide) => (
+      <a href={guide.url} class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <h2 class="text-xl font-semibold mb-2">{guide.title}</h2>
+        <p class="text-gray-600">{guide.description}</p>
+      </a>
+    ))}
+  </div>
+</Layout>

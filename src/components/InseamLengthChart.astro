@@ -1,0 +1,28 @@
+---
+const inseamLengths = [
+  { description: "Short", inches: "28-30", cm: "71-76" },
+  { description: "Regular", inches: "32", cm: "81" },
+  { description: "Long", inches: "34-36", cm: "86-91" },
+];
+---
+
+<div class="bg-gray-100 p-6 rounded-lg shadow-md">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-300 p-2 text-sm font-bold">Description</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Inches</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Centimeters</th>
+      </tr>
+    </thead>
+    <tbody>
+      {inseamLengths.map(({ description, inches, cm }) => (
+        <tr class="hover:bg-gray-50">
+          <td class="border border-gray-300 p-2 text-sm text-center">{description}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{inches}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{cm}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,28 @@
+---
+const waistSizes = [
+  { inches: "28-30", cm: "71-76" },
+  { inches: "32-34", cm: "81-86" },
+  { inches: "36-38", cm: "91-97" },
+  { inches: "40-42", cm: "102-107" },
+  { inches: "44-46", cm: "112-117" },
+];
+---
+
+<div class="bg-gray-100 p-6 rounded-lg shadow-md">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-300 p-2 text-sm font-bold">Inches</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Centimeters</th>
+      </tr>
+    </thead>
+    <tbody>
+      {waistSizes.map(({ inches, cm }) => (
+        <tr class="hover:bg-gray-50">
+          <td class="border border-gray-300 p-2 text-sm text-center">{inches}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{cm}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

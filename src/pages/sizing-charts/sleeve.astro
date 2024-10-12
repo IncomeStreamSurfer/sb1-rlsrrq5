@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SleeveLengthChart from '../../components/SleeveLengthChart.astro';
+
+const crumbs = [
+  { text: "Sizing Charts", href: "/sizing-charts" },
+  { text: "Sleeve Length Conversion Chart", href: "/sizing-charts/sleeve" }
+];
+---
+
+<Layout title="Men's Sleeve Length Conversion Chart | Classic Menswear Chronicle" crumbs={crumbs}>
+  <h1 class="text-4xl font-bold mb-4">Men's Sleeve Length Conversion Chart</h1>
+  <p class="mb-8">Find the perfect sleeve length for your shirts and jackets with our conversion chart. This guide helps you convert between inches and centimeters, ensuring a proper fit and stylish appearance for any long-sleeved garment.</p>
+  
+  <SleeveLengthChart />
+  
+  <div class="mt-8">
+    <h2 class="text-2xl font-bold mb-4">How to Measure Your Sleeve Length</h2>
+    <ol class="list-decimal list-inside space-y-2">
+      <li>Stand with your arm slightly bent at your side.</li>
+      <li>Measure from the center back of your neck, across your shoulder, and down to your wrist.</li>
+      <li>For the most accurate measurement, have someone else measure for you.</li>
+      <li>Record the measurement and use the chart above to find your sleeve length.</li>
+    </ol>
+  </div>
+  
+  <p class="mt-8 text-gray-600">Tip: When wearing a suit jacket, about 1/4 to 1/2 inch of shirt cuff should be visible beyond the jacket sleeve.</p>
+</Layout>

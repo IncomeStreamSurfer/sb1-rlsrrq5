@@ -1,0 +1,42 @@
+---
+const shoeSizes = [
+  { us: "6", uk: "5", eu: "39", cm: "24" },
+  { us: "6.5", uk: "5.5", eu: "39-40", cm: "24.5" },
+  { us: "7", uk: "6", eu: "40", cm: "25" },
+  { us: "7.5", uk: "6.5", eu: "40-41", cm: "25.5" },
+  { us: "8", uk: "7", eu: "41", cm: "26" },
+  { us: "8.5", uk: "7.5", eu: "41-42", cm: "26.5" },
+  { us: "9", uk: "8", eu: "42", cm: "27" },
+  { us: "9.5", uk: "8.5", eu: "42-43", cm: "27.5" },
+  { us: "10", uk: "9", eu: "43", cm: "28" },
+  { us: "10.5", uk: "9.5", eu: "43-44", cm: "28.5" },
+  { us: "11", uk: "10", eu: "44", cm: "29" },
+  { us: "11.5", uk: "10.5", eu: "44-45", cm: "29.5" },
+  { us: "12", uk: "11", eu: "45", cm: "30" },
+  { us: "13", uk: "12", eu: "46", cm: "31" },
+  { us: "14", uk: "13", eu: "47", cm: "32" },
+];
+---
+
+<div class="bg-gray-100 p-6 rounded-lg shadow-md overflow-x-auto">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-300 p-2 text-sm font-bold">US</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">UK</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">EU</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">CM</th>
+      </tr>
+    </thead>
+    <tbody>
+      {shoeSizes.map(({ us, uk, eu, cm }) => (
+        <tr class="hover:bg-gray-50">
+          <td class="border border-gray-300 p-2 text-sm text-center">{us}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{uk}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{eu}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{cm}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

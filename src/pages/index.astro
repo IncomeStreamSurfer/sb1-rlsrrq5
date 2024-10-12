@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const latestPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+
+const featuredGuides = [
+  { title: "Suit Essentials", url: "/guides/suit-essentials", description: "Master the art of wearing and choosing the perfect suit" },
+  { title: "Fabric Fundamentals", url: "/guides/fabric-fundamentals", description: "Understanding the materials that make exceptional menswear" },
+  { title: "Accessorizing 101", url: "/guides/accessorizing-101", description: "The finer points of completing your look with style" },
+];
+---
+
+<Layout title="The Classic Menswear Chronicle - Home">
+  <meta name="google-site-verification" content="c1Vt5HIYhSmjFT-aJ3LKNslnJJDCRe_tGqX7DU8fuaA" />
+  
+  <section class="hero bg-gray-900 text-white py-20 px-4 rounded-lg shadow-xl mb-12">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-serif font-bold mb-4">The Classic Menswear Chronicle</h1>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Exploring the world of timeless style and sophisticated fashion for the modern gentleman.</p>
+      <a href="/guides" class="bg-white text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-200 transition duration-300 inline-block font-bold">Explore Our Guides</a>
+    </div>
+  </section>
+
+  <section class="featured-content mb-16">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-serif font-bold mb-8 text-center">Featured Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {featuredGuides.map((guide) => (
+          <a href={guide.url} class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+            <h3 class="text-xl font-bold mb-2">{guide.title}</h3>
+            <p class="text-gray-600">{guide.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="latest-articles py-16 bg-gray-100 rounded-lg">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-serif font-bold mb-8 text-center">Latest Articles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {latestPosts.map((post) => (
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src={post.data.image} alt={post.data.title} class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">{post.data.title}</h3>
+              <p class="text-gray-600 mb-4">{post.data.description}</p>
+              <a href={`/blog/${post.slug}`} class="text-blue-600 hover:underline">Read more</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta bg-gray-900 text-white py-16 px-4 rounded-lg shadow-xl">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-serif font-bold mb-4">Elevate Your Style</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Join our community of style enthusiasts and receive exclusive tips, trends, and insights delivered straight to your inbox.</p>
+      <form class="max-w-md mx-auto flex flex-col md:flex-row gap-4">
+        <input type="email" placeholder="Your email address" class="flex-grow px-4 py-2 rounded-lg text-gray-900" required>
+        <button type="submit" class="bg-white text-gray-900 px-6 py-2 rounded-lg hover:bg-gray-200 transition duration-300 font-bold">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</Layout>

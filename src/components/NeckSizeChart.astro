@@ -1,0 +1,28 @@
+---
+const neckSizes = [
+  { inches: "14-14.5", cm: "35.5-37" },
+  { inches: "15-15.5", cm: "38-39.5" },
+  { inches: "16-16.5", cm: "40.5-42" },
+  { inches: "17-17.5", cm: "43-44.5" },
+  { inches: "18-18.5", cm: "45.5-47" },
+];
+---
+
+<div class="bg-gray-100 p-6 rounded-lg shadow-md">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-300 p-2 text-sm font-bold">Inches</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Centimeters</th>
+      </tr>
+    </thead>
+    <tbody>
+      {neckSizes.map(({ inches, cm }) => (
+        <tr class="hover:bg-gray-50">
+          <td class="border border-gray-300 p-2 text-sm text-center">{inches}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{cm}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

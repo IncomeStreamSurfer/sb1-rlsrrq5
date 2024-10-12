@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const crumbs = [
+  { text: "Sizing Charts", href: "/sizing-charts" }
+];
+
+const sizingCharts = [
+  { title: "Suit Size Conversion Chart", icon: "👔", url: "/sizing-charts/suit", description: "Convert between US, UK, and EU suit sizes" },
+  { title: "Shirt Size Conversion Chart", icon: "👕", url: "/sizing-charts/shirt", description: "Find your perfect shirt size across different systems" },
+  { title: "Shoe Size Conversion Chart", icon: "👞", url: "/sizing-charts/shoe", description: "Convert between US, UK, EU, and CM shoe sizes" },
+  { title: "Belt Size Conversion Chart", icon: "🧵", url: "/sizing-charts/belt", description: "Find your ideal belt size based on waist measurements" },
+  { title: "Glove Size Conversion Chart", icon: "🧤", url: "/sizing-charts/glove", description: "Convert between S-XXL and numerical glove sizes" },
+  { title: "Hat Size Conversion Chart", icon: "🎩", url: "/sizing-charts/hat", description: "Convert between inches, cm, and hat sizes" },
+  { title: "Neck Size Conversion Chart", icon: "👔", url: "/sizing-charts/neck", description: "Convert neck sizes between inches and centimeters" },
+  { title: "Waist Size Conversion Chart", icon: "👖", url: "/sizing-charts/waist", description: "Convert waist sizes between inches and centimeters" },
+  { title: "Inseam Length Conversion Chart", icon: "📏", url: "/sizing-charts/inseam", description: "Understand inseam lengths for different heights" },
+  { title: "Chest Size Conversion Chart", icon: "👕", url: "/sizing-charts/chest", description: "Convert chest sizes between inches and centimeters" },
+  { title: "Sleeve Length Conversion Chart", icon: "👔", url: "/sizing-charts/sleeve", description: "Find your perfect sleeve length across size systems" },
+];
+---
+
+<Layout title="Men's Clothing Size Charts and Conversion Guides | Classic Menswear Chronicle" crumbs={crumbs}>
+  <h1 class="text-4xl font-bold mb-4">Men's Clothing Size Charts and Conversion Guides</h1>
+  <p class="mb-8">Find the perfect fit with our comprehensive collection of men's clothing size charts and conversion guides. Whether you're shopping for suits, shirts, shoes, or accessories, our easy-to-use charts will help you navigate international sizing systems with confidence.</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {sizingCharts.map(({ title, icon, url, description }) => (
+      <a href={url} class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col items-center">
+        <span class="text-4xl mb-4">{icon}</span>
+        <h2 class="text-xl font-semibold mb-2">{title}</h2>
+        <p class="text-gray-600 text-center">{description}</p>
+      </a>
+    ))}
+  </div>
+</Layout>

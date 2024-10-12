@@ -1,0 +1,33 @@
+---
+const shirtSizes = [
+  { neck: "14", chest: "34-36", sleeve: "32-33" },
+  { neck: "14.5", chest: "36-38", sleeve: "32-33" },
+  { neck: "15", chest: "38-40", sleeve: "32-33" },
+  { neck: "15.5", chest: "40-42", sleeve: "32-33" },
+  { neck: "16", chest: "42-44", sleeve: "32-34" },
+  { neck: "16.5", chest: "44-46", sleeve: "32-34" },
+  { neck: "17", chest: "46-48", sleeve: "34-36" },
+  { neck: "17.5", chest: "48-50", sleeve: "34-36" },
+];
+---
+
+<div class="bg-gray-100 p-6 rounded-lg shadow-md">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-300 p-2 text-sm font-bold">Neck (inches)</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Chest (inches)</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Sleeve (inches)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {shirtSizes.map(({ neck, chest, sleeve }) => (
+        <tr class="hover:bg-gray-50">
+          <td class="border border-gray-300 p-2 text-sm text-center">{neck}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{chest}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{sleeve}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

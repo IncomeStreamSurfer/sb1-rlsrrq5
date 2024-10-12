@@ -1,0 +1,28 @@
+---
+const gloveSizes = [
+  { size: "S", handCircumference: "7.5-8" },
+  { size: "M", handCircumference: "8.5-9" },
+  { size: "L", handCircumference: "9.5-10" },
+  { size: "XL", handCircumference: "10.5-11" },
+  { size: "XXL", handCircumference: "11.5-12" },
+];
+---
+
+<div class="bg-gray-100 p-6 rounded-lg shadow-md">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-300 p-2 text-sm font-bold">Size</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Hand Circumference (inches)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {gloveSizes.map(({ size, handCircumference }) => (
+        <tr class="hover:bg-gray-50">
+          <td class="border border-gray-300 p-2 text-sm text-center">{size}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{handCircumference}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

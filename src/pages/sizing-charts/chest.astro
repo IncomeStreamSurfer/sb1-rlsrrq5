@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ChestSizeChart from '../../components/ChestSizeChart.astro';
+
+const crumbs = [
+  { text: "Sizing Charts", href: "/sizing-charts" },
+  { text: "Chest Size Conversion Chart", href: "/sizing-charts/chest" }
+];
+---
+
+<Layout title="Men's Chest Size Conversion Chart | Classic Menswear Chronicle" crumbs={crumbs}>
+  <h1 class="text-4xl font-bold mb-4">Men's Chest Size Conversion Chart</h1>
+  <p class="mb-8">Find the perfect fit for your shirts, jackets, and suits with our chest size conversion chart. This guide helps you convert between inches and centimeters, ensuring a comfortable and stylish fit for any upper body wear.</p>
+  
+  <ChestSizeChart />
+  
+  <div class="mt-8">
+    <h2 class="text-2xl font-bold mb-4">How to Measure Your Chest Size</h2>
+    <ol class="list-decimal list-inside space-y-2">
+      <li>Use a flexible tape measure.</li>
+      <li>Wrap the tape measure around the fullest part of your chest, typically at nipple level.</li>
+      <li>Keep the tape measure level and snug, but not tight.</li>
+      <li>Take a deep breath and then exhale. Measure at the end of the exhale.</li>
+      <li>Record the measurement and use the chart above to find your chest size.</li>
+    </ol>
+  </div>
+  
+  <p class="mt-8 text-gray-600">Note: When buying fitted shirts or jackets, consider allowing an extra inch or two for comfort and movement.</p>
+</Layout>

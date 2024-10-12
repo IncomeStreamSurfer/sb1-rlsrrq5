@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HatSizeChart from '../../components/HatSizeChart.astro';
+
+const crumbs = [
+  { text: "Sizing Charts", href: "/sizing-charts" },
+  { text: "Hat Size Conversion Chart", href: "/sizing-charts/hat" }
+];
+---
+
+<Layout title="Men's Hat Size Conversion Chart | Classic Menswear Chronicle" crumbs={crumbs}>
+  <h1 class="text-4xl font-bold mb-4">Men's Hat Size Conversion Chart</h1>
+  <p class="mb-8">Find the perfect fit for your head with our hat size conversion chart. This guide helps you convert between inches, centimeters, and standard hat sizes, ensuring a comfortable and stylish fit for any headwear.</p>
+  
+  <HatSizeChart />
+  
+  <div class="mt-8">
+    <h2 class="text-2xl font-bold mb-4">How to Measure Your Head for a Hat</h2>
+    <ol class="list-decimal list-inside space-y-2">
+      <li>Use a flexible tape measure or a string.</li>
+      <li>Measure around your head about 1/8 inch above your ear, across the mid-forehead, completely circling your head.</li>
+      <li>If using a string, mark where the end meets and then measure the length with a ruler.</li>
+      <li>Record the measurement and use the chart above to find your hat size.</li>
+    </ol>
+  </div>
+  
+  <p class="mt-8 text-gray-600">Note: If you're between sizes, it's usually best to choose the larger size for a more comfortable fit.</p>
+</Layout>

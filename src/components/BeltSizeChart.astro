@@ -1,0 +1,28 @@
+---
+const beltSizes = [
+  { waist: "30-32", belt: "34" },
+  { waist: "34-36", belt: "38" },
+  { waist: "38-40", belt: "42" },
+  { waist: "42-44", belt: "46" },
+  { waist: "46-48", belt: "50" },
+];
+---
+
+<div class="bg-gray-100 p-6 rounded-lg shadow-md">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-300 p-2 text-sm font-bold">Waist Size (inches)</th>
+        <th class="border border-gray-300 p-2 text-sm font-bold">Belt Size (inches)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {beltSizes.map(({ waist, belt }) => (
+        <tr class="hover:bg-gray-50">
+          <td class="border border-gray-300 p-2 text-sm text-center">{waist}</td>
+          <td class="border border-gray-300 p-2 text-sm text-center">{belt}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
